@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OnlineStore.Controllers;
+using OnlineStore.Models;
 
 namespace OnlineStoreTest
 {
@@ -10,13 +11,10 @@ namespace OnlineStoreTest
     {
 
         [TestMethod]
-        public void TestMethod1()
+        public void HomePageTest()
         {
-
             var controller = new HomeController();
-
             var result = controller.Index() as ViewResult;
-
             Assert.AreEqual("Index", result.ViewName);
         }
     }
