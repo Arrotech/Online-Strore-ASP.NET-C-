@@ -11,12 +11,6 @@ namespace OnlineStore.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
 
         public HomeController()
         {
@@ -24,7 +18,8 @@ namespace OnlineStore.Controllers
 
         public IActionResult Index()
         {
-            return View("Index");
+            List<Product> productList = Product.GetProducts();
+            return View("Index", productList);
         }
 
         public IActionResult Privacy()
